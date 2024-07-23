@@ -1,0 +1,9 @@
+package StarAgileDevopsAssignmentQ2;
+
+import org.testng.annotations.Test;
+
+public class AmazonSeleniumGrid {
+  @Test
+  public void f() {
+  }
+}

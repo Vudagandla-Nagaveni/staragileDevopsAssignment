@@ -1,0 +1,52 @@
+/*Write Automation script for Amazon application using docker test it on three 
+ * different browsers like chrome, Firefox and edge with selenium grid setup and 
+ * push your code on git hub and trigger job in Jenkins to print the result
+ */
+package StarAgileDevopsAssignmentQ2;
+
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class AmazonSeleniumGrid 
+{
+	public WebDriver driver;
+	@Parameters({"browsername"})
+	@Test
+	public void crossBrowserTest(String browsername)throws MalformedURLException ;
+	{
+		System.out.println("Remote Driver Connectivity Started");
+		if(browsername.equals("Chrome"))
+		{
+			driver = new RemoteWebDriver(new URL("http://localhost:4444"),options);
+			ChromeOptions options = new ChromeOptions();
+			System.out.println("Session Created on Chrome!");
+
+		}else if(browsername.equals("Firefox"))
+		{
+
+			driver = new FirefoxDriver();
+			System.out.println("Session Created on Firefox!");
+
+		}else if(browsername.equals("Edge"))
+		{
+			driver = new EdgeDriver();
+			System.out.println("Session Created on Edge!");
+
+		}
+		//open Application
+		System.out.println("Remote Driver Connectivity Completed");
+		driver.get("https://www.amazon.in");
+		Thread.sleep(10000);
+		System.out.println("Title is :" +driver.getTitle());
+		Thread.sleep(6000);
+
+	}
+}

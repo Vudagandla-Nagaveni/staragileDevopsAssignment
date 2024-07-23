@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="chromeTest">
+		<parameter name="browsername" value="Chrome"></parameter>
+		<classes>
+			<class name="StarAgileDevopsAssignmentQ2.AmazonSeleniumGrid"></class>
+		</classes>
+
+	</test> <!-- Test -->
+	
+	<test thread-count="5" name="EdgeTest">
+		<parameter name="browsername" value="Edge"></parameter>
+		<classes>
+			<class name="StarAgileDevopsAssignmentQ2.AmazonSeleniumGrid"></class>
+		</classes>
+
+	</test> <!-- Test -->
+	
+	<test thread-count="5" name="FirefoxTest">
+		<parameter name="browsername" value="Firefox"></parameter>
+		<classes>
+			<class name="StarAgileDevopsAssignmentQ2.AmazonSeleniumGrid"></class>
+		</classes>
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

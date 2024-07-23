@@ -1,0 +1,24 @@
+/*Write Automation script for Amazon application using docker test it on three 
+ * different browsers like chrome, Firefox and edge with selenium grid setup and 
+ * push your code on git hub and trigger job in Jenkins to print the result
+ */
+package StarAgileDevopsAssignmentQ2;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class AmazonSeleniumGrid {
+	public WebDriver driver;
+	@Parameters({"browsername"})
+  @Test
+  public void crossBrowserTest(String browsername)
+	{
+		System.out.println("Remote driver connectivity started");
+		if(browsername.equals("Chrome"))
+		{
+			driver = new Remote WebDriver()
+		}
+			
+  }
+}

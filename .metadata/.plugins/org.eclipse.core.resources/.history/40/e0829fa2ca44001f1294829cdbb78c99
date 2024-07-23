@@ -1,0 +1,37 @@
+package com.CRM.TestCases2;
+
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import com.CRM.Pages1.HomePage;
+
+public class HomePageTestCase extends BaseClass {
+  @Test(priority=1)
+  public void verifyUrl() 
+  {
+
+	  String actUrl=hp.getAppUrl();
+	  AssertJUnit.assertTrue(actUrl.contains("crm"),"Test Fail:Url not matched!!");
+	 Reporter.log("Test Pass:Because Url matched!!");	  
+  }
+  
+  @Test(priority=2)
+  public void verifyTitle() 
+  {
+	String actTitle=hp.getAppTitle();
+	AssertJUnit.assertTrue(actTitle.contains("Customer"),"Test Fail:Title is not matched");
+	Reporter.log("Test Pass: Title matched");
+  }
+  
+  @Test(priority=3)
+  public void validateSignInLink() 
+  {
+	  String nextPageUrl=hp.getStatusOfLink();
+	  AssertJUnit.assertTrue(nextPageUrl.contains("login"),"Test Fail:Login page not open");
+	Reporter.log("Test Pass:Application navigating to Login Page");
+  }
+  
+}
